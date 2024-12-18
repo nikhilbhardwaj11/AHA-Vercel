@@ -12,6 +12,7 @@ import { UserProvider } from "@/providers/userProvider";
 import { GuestUserProvider } from "@/providers/guestUserProvider";
 import Script from "next/script";
 import GlobalPowerReviewsInitializer from "@/providers/GlobalPowerReviewsInitializer";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -47,6 +48,7 @@ export default function RootLayout({ children }) {
             <Header />
             <React.Suspense fallback={<div></div>}>
               <div className="mt-[212px] lg:mt-[109px]">{children}</div>
+              <SpeedInsights />
             </React.Suspense>
             <Toaster />
             <Footer />
